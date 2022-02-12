@@ -10,8 +10,8 @@ int your_function(int nb)
 }
 
 static const command_t command_map[] = {
-    {.command = "test", .str = your_function}, // Add items if needed
-    {.command = NULL, .str = NULL}
+    {.command = "test", .fptr = your_function}, // Add items if needed
+    {.command = NULL, .fptr = NULL}
 };
 
 const command_t *find_command(char *your_var)
@@ -19,7 +19,7 @@ const command_t *find_command(char *your_var)
     if (your_var == NULL)
         return NULL;
     // The loop traverses the map to find the function to call
-    for (int index = 0; command_map[index].str != NULL; index += 1) {
+    for (int index = 0; command_map[index].fptr != NULL; index += 1) {
         if (strcmp(your_var, command_map[index].command) == 0) {
             return &command_map[index];
         }
@@ -30,15 +30,15 @@ const command_t *find_command(char *your_var)
 int main(void)
 {
     const command_t *com = NULL;
-    char str[5] = {'t', 'e', 's', 't', '\0'}; // Working example
-    char string[2] = {'r', '\0'}; // Non-working example
+    char str_working[5] = {'t', 'e', 's', 't', '\0'}; // Working example
+    char str_non_working[2] = {'r', '\0'}; // Non-working example
     int nb = 5;
 
-    if (str == NULL || string == NULL)
+    if (str_working == NULL || str_non_working == NULL)
         return 84;
-    com = find_command(str); // Search the function
+    com = find_command(str_working); // Search the function
     if (com == NULL)
         return 84;
-    com->str(nb); // Function call
+    com->fptr(nb); // Function call
     return 0;
 }
