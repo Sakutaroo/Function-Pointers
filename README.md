@@ -25,7 +25,7 @@ Nous l'initialisons à `NULL` dans notre programme en faisant référence à not
 `*com` correspond au nom de notre pointeur sur fonction, c'est cette variable qui va stocker l'adresse du pointeur.
 <br /><br /><br />
 Nous allons ensuite créer une nouvelle fonction afin de récupérer l'adresse de la fonction à appeler. Cette fonction va nous servir à parcourir une "map" qui contient les différentes fonctions à appeler.<br />
-Cette fonction va retournée notre pointeur donc il va être du type de notre structure :
+Cette fonction va retourner notre pointeur donc il va être du type de notre structure :
 
 	const command_t *find_command(char *your_var)
 Voici le prototype de notre fonction, nous y retrouvons le type de notre structure et également en argument un `char *` : cet argument va nous permettre de savoir quelle fonction nous allons devoir appeler. Cet élément est défini au préalable dans notre structure :
@@ -35,7 +35,7 @@ Il nous reste plus qu'à créer la fonction qui parcourt notre "map" (que nous a
 Pour parcourir notre map, c'est assez simple : une boucle for suffit ! Mais laquelle ? Celle-ci :
 
 	for (int index = 0; command_map[index].fptr != NULL; index += 1)
-Quelques explications s'imposent ! Si vous connaissez et comprenez le principe de tableaux, ce ne sera pas très compliqué à comprendre.<br />
+Quelques explications s'imposent ! Si vous connaissez et comprenez le principe des tableaux, ce ne sera pas très compliqué à comprendre.<br />
 Comme dans un tableau, notre "map" se finit par `NULL`.<br />
 `command_map` correspond à notre nom de fonction pour notre "map" (c'était compliqué à deviner sans avoir créer la fonction, c'est vrai). Et donc, nous avons un index qui va nous permetter de nous déplacer dans notre "map" (tout comme un tableau, nous commençons à 0 pour avoir le premier élement).<br />
 Et pour finir le `.fptr` va faire référence au nom du pointeur (que nous avons défini dans notre structure).<br />
@@ -43,7 +43,7 @@ Et pour finir le `.fptr` va faire référence au nom du pointeur (que nous avons
 Ensuite, dans cette boucle il faut comparer les élements de la "map" avec notre argument. J'ai pris en exemple un `char *` donc nous allons utiliser la fonction `strcmp` :
 
 	if (strcmp(your_var, command_map[index].command) == 0)
-Petit point technique : si les deux chaînes de caractère sont égales alors la fonction `strcmp` retourne la valeur `0`.<br />
+Petit point technique : si les deux chaînes de caractères sont les mêmes alors la fonction `strcmp` retourne la valeur `0`.<br />
 `your_var` correspond à notre argument.<br />
 `command_map[index].command` : nous retrouvons donc notre nom de fonction de la "map" `command_map` avec notre index. Le `.command` correspond aux chaînes de caractères que nous allons définir dans notre map juste après (ce n'est pas grave si vous ne comprenez pas encore son utilité, ce sera plus clair une fois que la "map" sera créée).<br />
 Et donc que faisons-nous si cette condition est vraie (donc si `strcmp` retourne `0`) ?<br />
