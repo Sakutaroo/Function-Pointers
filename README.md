@@ -1,6 +1,6 @@
 # Function pointers template
 
-Le principe des pointeurs sur fonctions est de comparer votre argument avec une liste (map) d'arguments définis. Selon la correspondance entre les éléments, l'adresse de la fonction sera retourné.
+Le principe des pointeurs sur fonctions est de comparer votre argument avec une liste (map) d'arguments définis. Selon la correspondance entre les éléments, l'adresse de la fonction sera retournée.
 
 Déclaration :
 
