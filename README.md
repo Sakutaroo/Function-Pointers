@@ -103,7 +103,7 @@ Une fois cela fait, nous pouvons appeler notre fonction sans aucun problème :
 `nb` est un `int` que nous donnons en paramètre de la fonction (les types des paramètres ont été définis dans la structure).<br />
 `com->fptr` appelle la fonction (son adresse est stockée dans `*com`) et `fptr` est le pointeur que nous avons défini dans notre structure.<br /><br /><br />
 
-Si malgré les explications, ce n'est encore très claire : n'hésitez pas à regarder le code dans le fichier .c et .h (il est fonctionnel). Il reprend les mêmes éléments qu'expliqués ici.<br />
+Si malgré les explications, ce n'est pas encore très claire : n'hésitez pas à regarder le code dans le fichier .c et .h (il est fonctionnel). Il reprend les mêmes éléments qu'expliqués ici.<br />
 Il ne faut pas hésiter à tester les réactions de votre programme avec divers arguments et types. La théorie c'est bien mais la pratique c'est mieux !<br /><br />
 
 Compilation :
