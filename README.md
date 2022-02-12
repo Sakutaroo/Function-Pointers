@@ -72,7 +72,7 @@ Il nous reste la fameuse "map" à créer ! Vous allez voir que certaines parties
 Prototype de la fonction "map" :
 
 	static const command_t command_map[]
-Nous reprenons encore une fois notre strucure avec `command_t` et vous retrouvez le nom de la fonction `command_map`. C'est cette fonction que nous avons appelée tout au long de la fonction précédente.<br />
+Nous reprenons encore une fois notre structure avec `command_t` et vous retrouvez le nom de la fonction `command_map`. C'est cette fonction que nous avons appelée tout au long de la fonction précédente.<br />
 La rédaction de la fonction est un peu particulière donc je vais vous la présenter et nous allons la décortiquer ensuite donc n'ayez pas peur en lisant le code !
 
 	static const command_t command_map[] = {
