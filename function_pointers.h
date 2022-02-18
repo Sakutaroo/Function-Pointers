@@ -3,7 +3,7 @@
 
 typedef struct command_s {
     char *command;
-    int (*str)(int);
+    int (*fptr)(int);
 } command_t;
 
 const command_t *find_command(char *your_var);
